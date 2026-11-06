@@ -1,6 +1,6 @@
-# E-Commerce Data Cleaning, Manipulation & Feature Engineering
+# E-Commerce Data Cleaning, Manipulation & Feature Engineering (Jupyter Notebook)
 
-A complete, beginner-friendly Python data analysis pipeline for real-world messy e-commerce transaction data.
+A complete, beginner-friendly **Jupyter Notebook (`.ipynb`)** data analysis project for real-world messy e-commerce transaction data.
 
 This project demonstrates **how to find**, **how to resolve**, and **how to engineer features** across 15 modular, well-commented blocks without nested or overly complex one-liners.
 
@@ -8,15 +8,16 @@ This project demonstrates **how to find**, **how to resolve**, and **how to engi
 
 ## 📁 Repository Contents
 
+* **[`data_cleaning_and_feature_engineering.ipynb`](data_cleaning_and_feature_engineering.ipynb)**: The interactive Jupyter Notebook with markdown explanation cells and executed code output cells.
 * `ecommerce_customer_data.csv`: The raw dataset (35,000+ rows) with intentional real-world anomalies, messy strings, and mixed date formats.
-* `data_cleaning_and_feature_engineering.py`: The executable pipeline divided into clear, simple functional blocks.
 * `ecommerce_cleaned_and_engineered.csv`: The final cleaned and feature-engineered dataset ready for analytics/ML models.
+* `generate_dataset.py`: Python script used to generate the dataset.
 
 ---
 
-## 🛠️ Pipeline Structure & Steps
+## 🛠️ Notebook Structure & Steps
 
-Each step addresses a single problem with clear diagnostic logic:
+Each step is an isolated cell addressing a single problem with clear diagnostic logic:
 
 ### Phase 1: Data Cleaning
 1. **Deduplication:** Find exact duplicate rows using `df.duplicated()` and remove them with `df.drop_duplicates()`.
@@ -43,26 +44,22 @@ Each step addresses a single problem with clear diagnostic logic:
     * Age bracket binning: `18-25`, `26-35`, `36-50`, `50+`.
     * Ordinal encoding for loyalty tier (`Bronze` $\to 1$, `Silver` $\to 2$, `Gold` $\to 3$, `Platinum` $\to 4$).
     * One-Hot Encoding (`pd.get_dummies`) for payment methods.
+15. **Save Clean Output:** Export to `ecommerce_cleaned_and_engineered.csv`.
 
 ---
 
-## 🚀 How to Run Locally
+## 🚀 How to Open and Run
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/piyush8769/data-cleaning.git
-   cd data-cleaning
-   ```
+You can view the notebook directly in GitHub, or open it in Jupyter Lab / VS Code / Google Colab:
 
-2. Install dependencies:
-   ```bash
-   pip install pandas numpy
-   ```
+```bash
+# 1. Clone repository
+git clone https://github.com/piyush8769/data-cleaning.git
+cd data-cleaning
 
-3. Run the complete pipeline:
-   ```bash
-   python data_cleaning_and_feature_engineering.py
-   ```
+# 2. Launch Jupyter
+jupyter notebook data_cleaning_and_feature_engineering.ipynb
+```
 
 ---
 
@@ -71,4 +68,4 @@ Each step addresses a single problem with clear diagnostic logic:
 * **Initial Data:** 35,350 rows $\times$ 22 columns
 * **Removed Duplicates:** 350 exact duplicate rows
 * **Cleaned Rows Remaining:** 34,296 valid rows
-* **Final Output Features:** 47 columns (including RFM, dummy variables, date parts, and domain tags)
+* **Final Output Features:** 45 columns (including RFM, dummy variables, date parts, and domain tags)
